@@ -1,5 +1,6 @@
-# Starter-Repo
-## Instructions
-   1. Create a new Repository
-   2. Use this repo as the import repository.
-   3. Get started on new Project! 
+## How to start app 
+1. npm install 
+2. npm run build
+3. npm start
+
+After you've run these above command your app should be running on localhost

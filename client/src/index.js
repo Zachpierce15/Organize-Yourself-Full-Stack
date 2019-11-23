@@ -1,8 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom'
-import App from './components/app.jsx'
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 
-const title = 'React with Webpack and Babel';
+import App from './components/app.jsx';
+import reducers from './reducers';
 
-ReactDOM.render(<App />, document.getElementById('app')
+
+ReactDOM.render(
+  <Provider store={createStore(reducers)}>
+    <App />
+  </Provider>,
+ document.getElementById('app')
 );
