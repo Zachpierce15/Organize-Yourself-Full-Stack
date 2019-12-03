@@ -1,5 +1,9 @@
 import { combineReducers } from 'redux';
+import { reducer as formReducer } from 'redux-form';
+import addNameReducer from './addNameReducer';
+
 
 export default combineReducers({
-  replaceMe: 'This is to start working on my application'
+  form: formReducer,
+  user: addNameReducer
 })
