@@ -1,6 +1,9 @@
 export default (state = null, action) => {
-  if(action.type==='USER_NAME') {
-    return action.payload.name
+
+  switch(action.type) {
+    case 'USER_NAME':
+      return action.payload.name;
+    default: 
+      return state
   }
-  return state
 }
