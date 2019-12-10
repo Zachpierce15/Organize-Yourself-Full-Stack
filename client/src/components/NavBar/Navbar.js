@@ -5,9 +5,7 @@ import { AddButtonDiv, SearchDiv, HeaderNav, WelcomeH2, Title } from './NavbarCS
 
 
 const NavBar = (props) => {
-  console.log(props)
   return (
-    <div>
       <HeaderNav>
 
         <SearchDiv>
@@ -28,7 +26,6 @@ const NavBar = (props) => {
 
       </HeaderNav>
 
-    </div>
   )
 }
 

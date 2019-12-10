@@ -7,17 +7,16 @@ const Board = styled.div`
   background-color: steelblue;
 `;
 
-const EachList = styled.div`
-  box-sizing: border-box;
-  display: inline-block;
+const AddListForm = styled.form`
+  background-color: #ebecf0;
+  border-radius: 3px;
   height: auto;
-  margin: 0 4px;
-  position: relative;
-  vertical-align: top;
-  width: 272px;
-  white-space: nowrap;
+  min-height: 32px;
+  padding: 4px;
+  margin-left: 11px;
+  margin-top: 7px;  
 `
 export{
   Board,
-  EachList
+  AddListForm
 }

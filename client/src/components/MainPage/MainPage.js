@@ -1,8 +1,6 @@
 import React from 'react';
 import NavBar from '../NavBar/Navbar';
-import Lists from '../Lists/List';
-
-
+import Lists from '../Lists/Board';
 
 const MainPage = (props) => {
   console.log(props)

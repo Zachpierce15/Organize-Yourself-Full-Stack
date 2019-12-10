@@ -17,6 +17,7 @@ const HeaderNav = styled.nav`
   display: flex;
   flex-direction: row;
   background-color: skyblue;
+  padding: 8px 4px 4px 8px;
 `;
 
 const WelcomeH2 = styled.h2`
