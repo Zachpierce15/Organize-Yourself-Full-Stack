@@ -1,13 +1,13 @@
 import React from 'react';
 import NavBar from '../NavBar/Navbar';
-import Lists from '../Lists/Board';
+import Board from '../Board/Board'
 
 const MainPage = (props) => {
   console.log(props)
   return (
     <div>
       <NavBar /> 
-      <Lists />
+      <Board />
     </div>
   );
 };

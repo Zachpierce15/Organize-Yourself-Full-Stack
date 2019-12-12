@@ -15,9 +15,10 @@ const List = styled.div`
 const TitleOfList = styled.div`
   cursor: pointer;
   flex: 0 0 auto;
+  margin-left: 10px;
+  min-height: 20px;
   padding: 10px 8px;
   position: relative;
-  min-height: 20px;
 `
 const ListContent = styled.div`
   background-color: #ebecf0;
@@ -29,8 +30,26 @@ const ListContent = styled.div`
   position: relative;
   white-space: normal;
 `;
+
+const AddCardDiv = styled.div`
+  min-height: 38px;
+  max-height: 38px;
+  display: flex;
+  justify-content: space-between;
+`;
+
+const AddCardText = styled.div`
+  border-radius: 3px;
+  color: #5e6c84;
+  flex-grow: 1;
+  margin: 4px 8px 8px 8px;
+  padding: 4px 8px;
+  cursor: pointer;
+`;
 export{
   List,
   TitleOfList,
-  ListContent
+  ListContent,
+  AddCardDiv,
+  AddCardText
 }

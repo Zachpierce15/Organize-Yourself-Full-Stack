@@ -1,24 +1,39 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { List, TitleOfList, ListContent } from './EachListCSS';
+import { List, TitleOfList, ListContent, AddCardDiv } from './EachListCSS';
+import AddCard from './AddCard'
 
 
 class EachList extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      hovered : false,
+    }
 
     this.renderLists = this.renderLists.bind(this);
+  }
+
+  checkForCards = (list) => {
+
   }
 
   renderLists = () => {
     const everyList = this.props.lists;
     return everyList.map((list) => {
+      console.log(list)
       return (
       <List key={list.id}>
 
         <ListContent>
 
           <TitleOfList>{list.title}</TitleOfList>
+
+          <AddCardDiv>
+
+            <AddCard />
+            
+          </AddCardDiv>
           
         </ListContent>
 

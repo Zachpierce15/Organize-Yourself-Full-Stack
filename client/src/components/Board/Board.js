@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import EachList from './EachList';
+import EachList from '../Lists/Each_List/EachList';
 import { addList } from '../../actions';
 import { Board, AddListForm } from './BoardCSS';
 
@@ -51,7 +51,7 @@ class Lists extends React.Component {
             </div>
   
             <div>
-              <input className="ui primary button" onClick={(e) => this.createList(e)} type='submit' value='Create list'/> 
+              <input className="ui primary button" onClick={(e) => this.createList(e)} style={{marginTop: '3px'}}type='submit' value='Create list'/> 
             </div>
   
           </AddListForm>
