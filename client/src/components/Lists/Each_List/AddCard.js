@@ -1,5 +1,7 @@
 import React from 'react';
-import { AddCardText } from './EachListCSS'
+import { AddCardText } from './EachListCSS';
+import CardForm from './CardForm/AddCardForm';
+
 
 class AddCard extends React.Component{
   constructor(props) {
@@ -18,7 +20,7 @@ class AddCard extends React.Component{
     const { clicked } = this.state
     if (clicked) {
       return (
-        <div> This is the Form </div>
+          <CardForm listId={this.props.listId} />
       )
     }
     return (

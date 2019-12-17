@@ -20,8 +20,9 @@ class EachList extends React.Component {
 
   renderLists = () => {
     const everyList = this.props.lists;
+    console.log(everyList, 'THIS IS ALL LISTS')
     return everyList.map((list) => {
-      console.log(list)
+
       return (
       <List key={list.id}>
 
@@ -31,7 +32,7 @@ class EachList extends React.Component {
 
           <AddCardDiv>
 
-            <AddCard />
+            <AddCard listId={list.id}/>
             
           </AddCardDiv>
           
