@@ -12,7 +12,18 @@ const addList = (list) => {
     payload: list
   }
 }
+// Add a new card to an existing list
+const AddCardToList = (listId, card) => {
+  return {
+    type: 'ADD_CARD',
+    payload: {
+      listId: listId,
+      card: card
+    }
+  }
+}
 export{
   nameOfUser,
-  addList 
+  addList,
+  AddCardToList 
 }

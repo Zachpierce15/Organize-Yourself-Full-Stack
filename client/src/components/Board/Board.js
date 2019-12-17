@@ -51,7 +51,7 @@ class Lists extends React.Component {
             </div>
   
             <div>
-              <input className="ui primary button" onClick={(e) => this.createList(e)} style={{marginTop: '3px'}}type='submit' value='Create list'/> 
+              <input className="ui primary button" onClick={(e) => this.createList(e)} style={{marginTop: '3px'}} type='submit' value='Create list'/> 
             </div>
   
           </AddListForm>

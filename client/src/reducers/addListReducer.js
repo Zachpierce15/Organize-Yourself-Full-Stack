@@ -4,8 +4,23 @@ export default (state = [], action) => {
 
     case 'ADD_LIST':
       return [...state, action.payload]
-      
-    default: 
+    
+    case 'ADD_CARD':
+      const answer = state.map((list) => {
+
+        if( list.id === action.payload.listId ) {
+
+        return {...list, items: [...list.items, action.payload.card]}
+
+        } else {
+
+          return list
+
+        }
+      })
+      console.log(answer,'This is ANSWER')
+       return answer
+      default: 
       return state
   }
 }
