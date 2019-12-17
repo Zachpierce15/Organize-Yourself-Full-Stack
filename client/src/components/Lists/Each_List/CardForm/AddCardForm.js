@@ -36,7 +36,6 @@ class CardForm extends React.Component{
         }}
         onSubmit={(e) => this.handleSubmit(e)}
         render={props => {
-          console.log(this.props.lists,'THIS IS LISTS IN REDUX')
           return (
             <Form>
               <div className="ui input">
@@ -69,29 +68,3 @@ const mapStateToProps = (state) => {
 // Connecting CardForm to Redux Store
 const ConnectCardForm = connect(mapStateToProps, { AddCardToList })(CardForm);
 export default ConnectCardForm
-
-
-
-
-
-// // Connecting CardForm to Formik
-// const FormikCardForm = withFormik({
-//   mapPropsToValues() {
-//     return {card: '', addButton: 'Add Card'}
-//   },
-//   validationSchema: Yup.object().shape({
-//     card: Yup.string().min(0).required()
-//   }), 
-//   handleSubmit(e) {
-//     console.log(arguments, 'THIS IS INSIDE OF ADD CARD FORM')
-//     e.preventDefault()
-//     const specificList = arguments[1].props.listId
-//     const card = {
-//       id: generateId(0,10000),
-//       information: values.card
-//     }
-//     // AddCardToList(specificList, card)
-//   }
-// })(ConnectCardForm)
-
-// export default FormikCardForm
