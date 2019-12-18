@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { DragDropContext } from 'react-beautiful-dnd';
 import EachList from '../Lists/Each_List/EachList';
 import { addList } from '../../actions';
 import { Board, AddListForm } from './BoardCSS';
@@ -18,7 +19,9 @@ class Lists extends React.Component {
     this.createList = this.createList.bind(this);
   }
 
-
+  onDragEnd = results => {
+    
+  }
   createList(e) {
     const { input } = this.state
     e.preventDefault()
@@ -34,30 +37,34 @@ class Lists extends React.Component {
 
   render() {
     return (
-      <Board>
-  
-        {this.props.lists.length === 0 ? null : <EachList />}
-  
-        <div>
-  
-          <AddListForm>
-            <div className='ui input'>
-              <input
-              onChange={(e) => this.setState({ input: e.target.value })}
-              type='text'
-              placeholder='Enter list title...'
-              value={this.state.input}
-              /> 
-            </div>
-  
-            <div>
-              <input className="ui primary button" onClick={(e) => this.createList(e)} style={{marginTop: '3px'}} type='submit' value='Create list'/> 
-            </div>
-  
-          </AddListForm>
-  
-        </div>
-      </Board>
+      <DragDropContext
+        onDragEnd={this.onDragEnd}
+      >
+        <Board>
+    
+          {this.props.lists.length === 0 ? null : <EachList />}
+    
+          <div>
+    
+            <AddListForm>
+              <div className='ui input'>
+                <input
+                onChange={(e) => this.setState({ input: e.target.value })}
+                type='text'
+                placeholder='Enter list title...'
+                value={this.state.input}
+                /> 
+              </div>
+    
+              <div>
+                <input className="ui primary button" onClick={(e) => this.createList(e)} style={{marginTop: '3px'}} type='submit' value='Create list'/> 
+              </div>
+    
+            </AddListForm>
+    
+          </div>
+        </Board>
+      </DragDropContext>
     )
   }
 }

@@ -2,8 +2,7 @@ import React from 'react';
 import NavBar from '../NavBar/Navbar';
 import Board from '../Board/Board'
 
-const MainPage = (props) => {
-  console.log(props)
+const MainPage = () => {
   return (
     <div>
       <NavBar /> 

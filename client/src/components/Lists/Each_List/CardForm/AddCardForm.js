@@ -1,8 +1,9 @@
 import React from 'react';
 import * as Yup from 'yup';
-import { Formik, FormikProps, Form, Field } from 'formik';
+import { Formik, Form, Field } from 'formik';
 import { connect } from 'react-redux';
 import { AddCardToList } from '../../../../actions';
+import { CustomDiv, ErrorMessage } from './AddCardCSS';
 
 
 class CardForm extends React.Component{
@@ -19,41 +20,60 @@ class CardForm extends React.Component{
       id: this.generateId(1,100000),
       name: e.card
     }
+    //Run Reducer function 
     this.props.AddCardToList(this.props.listId, card)
+    //Run Function to change state in Add Card component
+    this.props.hasAddedCard()
   }
 
+
   render() {
+    // Validation schema to check if form is recieving correct inputs
+    const SignupSchema = Yup.object().shape({
+      card: Yup.string()
+        .min(1,'Must have a minimum of 1 character')
+        .max(50, 'Max of 50 characters')
+        .required('Title required')
+    });
     return (
       <Formik 
         initialValues={{
             card: ''
         }}
-        validate={(values) => {
-           let errors = {};
-              
-           //check if my values have errors
-           return errors;
-        }}
+        validationSchema={SignupSchema}   
         onSubmit={(e) => this.handleSubmit(e)}
-        render={props => {
+        render={({errors, touched}) => {
           return (
-            <Form>
-              <div className="ui input">
-                <Field
-                  type='text'
-                  name='card'
-                  placeholder='Enter Card Title'
-                />
-              </div>
-              <div>
-                <Field
-                  className='ui green button'
-                  name='addCard'
-                  type='submit'
-                  value='Add Card'
-                />
-              </div>
-            </Form>
+            <div>
+
+              <Form>
+                <CustomDiv className="ui input">
+                  <Field
+                    type='text'
+                    name='card'
+                    placeholder='Enter Card Title'
+                  />
+                  {
+                    errors.card && touched.card ? (
+                      <ErrorMessage className="ui error message">
+                        <div className ="header">
+                        {errors.card}
+                        </div>
+                      </ErrorMessage>
+                      ) : null
+                  }
+                </CustomDiv>
+                <div>
+                  <Field
+                    className='ui green button'
+                    name='addCard'
+                    type='submit'
+                    value='Add Card'
+                  />
+                </div>
+              </Form>
+              
+            </div>
           )
         }}
       />)

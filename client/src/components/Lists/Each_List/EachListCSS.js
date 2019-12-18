@@ -15,6 +15,7 @@ const List = styled.div`
 const TitleOfList = styled.div`
   cursor: pointer;
   flex: 0 0 auto;
+  font-weight: bold;
   margin-left: 10px;
   min-height: 20px;
   padding: 10px 8px;
@@ -26,9 +27,9 @@ const ListContent = styled.div`
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  max-height: 100%;
   position: relative;
   white-space: normal;
+  z-index: 1;
 `;
 
 const AddCardDiv = styled.div`
@@ -46,10 +47,12 @@ const AddCardText = styled.div`
   padding: 4px 8px;
   cursor: pointer;
 `;
+
+
 export{
   List,
   TitleOfList,
   ListContent,
   AddCardDiv,
-  AddCardText
+  AddCardText,
 }

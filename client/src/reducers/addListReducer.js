@@ -17,9 +17,10 @@ export default (state = [], action) => {
           return list
 
         }
-      })
-      console.log(answer,'This is ANSWER')
+      });
+      
        return answer
+
       default: 
       return state
   }
