@@ -3,12 +3,15 @@ import * as Yup from 'yup';
 import { Formik, Form, Field } from 'formik';
 import { connect } from 'react-redux';
 import { AddCardToList } from '../../../../actions';
-import { CustomDiv, ErrorMessage } from './AddCardCSS';
+import { CustomDiv, ErrorMessage, FormatForm, ButtonDiv, CancelButton } from './AddCardCSS';
 
 
 class CardForm extends React.Component{
   constructor(props){
     super(props);
+    this.state={
+      hovered: false
+    }
   }
 
   generateId = (min, max) => {
@@ -44,14 +47,14 @@ class CardForm extends React.Component{
         onSubmit={(e) => this.handleSubmit(e)}
         render={({errors, touched}) => {
           return (
-            <div>
+            <FormatForm>
 
               <Form>
                 <CustomDiv className="ui input">
                   <Field
                     type='text'
                     name='card'
-                    placeholder='Enter Card Title'
+                    placeholder='Enter title for card' 
                   />
                   {
                     errors.card && touched.card ? (
@@ -63,17 +66,25 @@ class CardForm extends React.Component{
                       ) : null
                   }
                 </CustomDiv>
-                <div>
+                <ButtonDiv>
                   <Field
                     className='ui green button'
                     name='addCard'
                     type='submit'
                     value='Add Card'
                   />
-                </div>
+                  <CancelButton
+                    onClick={this.props.exitForm}
+                    onMouseEnter={() => this.setState({ hovered: true })}
+                    onMouseLeave={() => this.setState({ hovered: false })}
+                    style={this.state.hovered ? { color: 'black'} : null}
+                    >
+                    X
+                  </CancelButton>
+                </ButtonDiv>
               </Form>
               
-            </div>
+            </FormatForm>
           )
         }}
       />)

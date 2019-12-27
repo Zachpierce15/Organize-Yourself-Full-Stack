@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Droppable } from 'react-beautiful-dnd'
+import { Draggable } from 'react-beautiful-dnd';
 import { List, TitleOfList, ListContent, AddCardDiv } from './EachListCSS';
 import AddCard from './AddCard';
-import Card from './Card/Card';
 import ItemList from './ItemList/ItemList';
 
 
@@ -15,29 +15,13 @@ class EachList extends React.Component {
     }
   }
 
-  checkForCards = (list, provided) => {
 
-    return list.items.length > 0 ? <div> {list.items.map( ( item, index ) => {
-
-      return (
-            <Card
-              key={item.id}
-              innerRef={provided.innerRef}
-              {...provided.droppableProps}
-              item={item}
-              index={index}
-            >
-              {provided.placeholder}
-            </Card>
-      )}
-  ) }</div>:
-    null
-  }
 
   render() {
     const { lists } = this.props;
 
     return lists.map((list) => {
+      console.log('list stuff: ', list);
 
       return (
       <List key={list.id}>
@@ -46,8 +30,51 @@ class EachList extends React.Component {
 
           <TitleOfList>{list.title}</TitleOfList>
 
-          <ItemList list={list}/>
-
+          <Droppable droppableId={list.id.toString()}>
+            {(provided) => (
+              <div
+                ref={provided.innerRef}
+                {...provided.droppableProps}
+              >
+              <ItemList
+                list={list}
+                />
+                {provided.placeholder}
+              </div>
+            )}
+          </Droppable>
+          {/* <Droppable droppableId={"23"}>
+            {(provided, snapshot) => {
+              console.log('snapshot: ', snapshot);
+              return (
+                <div ref={provided.innerRef} {...provided.droppableProps} style={{ backgroundColor: snapshot.isDraggingOver ? 'blue' : 'grey' }}>
+                  <p>This is the column</p>
+                  {provided.placeholder}
+                  <Draggable draggableId={"47"} index={0} isDragDisabled={false}>
+       {(innerProvided) => {
+         return (
+          <div {...innerProvided.draggabldeProps}
+              {...innerProvided.dragHandleProps}
+              ref={innerProvided.innerRef}>
+              <p>Something</p>
+        </div>
+         )
+       }
+      }
+    </Draggable>
+    <Draggable draggableId={"48"} index={1} isDragDisabled={false}>
+       {(innerProvided) => (
+         <div {...innerProvided.draggableProps}
+              {...innerProvided.dragHandleProps}
+              ref={innerProvided.innerRef}>
+              <p>Something</p>
+        </div>
+      )}
+    </Draggable>
+                </div>
+              )
+            }}
+          </Droppable> */}
 
           <AddCardDiv>
 

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import SignIn from './SignIn/SignIn';
 import MainPage from './MainPage/MainPage';
 
+
 class App extends React.Component {
   renderSelector = () => {
     return this.props.user === null ? <SignIn /> : <MainPage />
@@ -10,9 +11,11 @@ class App extends React.Component {
 
   render() {
     return (
+
     <div>
       {this.renderSelector()}
     </div>
+
     )
   }
 }

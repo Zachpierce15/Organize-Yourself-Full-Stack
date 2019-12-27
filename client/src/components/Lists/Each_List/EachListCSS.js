@@ -34,10 +34,11 @@ const ListContent = styled.div`
 
 const AddCardDiv = styled.div`
   min-height: 38px;
-  max-height: 38px;
+  max-height: fit-content;
   display: flex;
   justify-content: space-between;
-`;
+  margin: inherit;
+  `;
 
 const AddCardText = styled.div`
   border-radius: 3px;

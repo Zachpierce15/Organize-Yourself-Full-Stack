@@ -2,18 +2,19 @@ import React from 'react';
 import Card from '../Card/Card'
 
 const ItemList = (props) => {
+  console.log("items list props: ", props.children);
   const { items } = props.list
-  console.log(props, 'Made it here')
-  return items.length > 0 ? <div> {items.map( ( item ) => {
+  return items.length > 0 ? items.map( ( item, index ) => {
 
     return (
           <Card
             key={item.id}
             item={item}
-          >
-          </Card>
+            index={index.toString()}
+           />
+
     )}
-) }</div>:
+) :
   null
 }
 

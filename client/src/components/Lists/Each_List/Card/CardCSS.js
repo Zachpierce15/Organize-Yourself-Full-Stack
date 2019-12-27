@@ -8,7 +8,6 @@ const EachCard = styled.div`
   margin: 4px 8px 8px;
   min-height: 23px;
   padding: 4px 0px 4px 8px;
-  z-index: 2;
 `;
 
 export {

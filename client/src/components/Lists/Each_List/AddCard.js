@@ -7,11 +7,12 @@ class AddCard extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      hover: false,
+      hovered: false,
       clicked: false,
       cardAdded: false
     }
     this.hasAddedCard = this.hasAddedCard.bind(this);
+    this.exitForm = this.exitForm.bind(this);
   }
 
   onClickHandler = () => {
@@ -22,12 +23,20 @@ class AddCard extends React.Component{
     this.setState({ cardAdded: true, clicked: false })
   }
 
+  exitForm() {
+    this.setState({ clicked: false })
+  }
+
   render() {
     const { clicked, cardAdded } = this.state
 
     if (clicked) {
       return (
-          <CardForm listId={this.props.listId} hasAddedCard={this.hasAddedCard}/>
+          <CardForm
+          listId={this.props.listId}
+          hasAddedCard={this.hasAddedCard}
+          exitForm={this.exitForm}
+          />
       )
     }
     if (cardAdded) {
