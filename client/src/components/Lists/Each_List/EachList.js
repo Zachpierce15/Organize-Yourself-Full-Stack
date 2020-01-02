@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Droppable } from 'react-beautiful-dnd'
-import { Draggable } from 'react-beautiful-dnd';
+import { Droppable } from 'react-beautiful-dnd';
+
 import { List, TitleOfList, ListContent, AddCardDiv } from './EachListCSS';
 import AddCard from './AddCard';
 import ItemList from './ItemList/ItemList';
@@ -21,7 +21,6 @@ class EachList extends React.Component {
     const { lists } = this.props;
 
     return lists.map((list) => {
-      console.log('list stuff: ', list);
 
       return (
       <List key={list.id}>

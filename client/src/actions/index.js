@@ -22,8 +22,21 @@ const AddCardToList = (listId, card) => {
     }
   }
 }
+
+const MoveCard = (source, destination, draggableId) => {
+  return {
+    type:'MOVE_CARD',
+    payload: {
+      source,
+      destination,
+      startId: source.droppableId,
+      finishId: destination.droppableId,
+    }
+  }
+}
 export{
   nameOfUser,
   addList,
-  AddCardToList 
+  AddCardToList,
+  MoveCard 
 }
