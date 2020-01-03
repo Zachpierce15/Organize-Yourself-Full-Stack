@@ -37,31 +37,32 @@ class Lists extends React.Component {
         <Board>
     
           {this.props.lists.length === 0 ? null : <EachList />}
-    
-          <ExtendDiv>
-    
-            <AddListForm>
-              <div className='ui input'>
-                <CustomInput
-                onChange={(e) => this.setState({ input: e.target.value })}
-                type='text'
-                placeholder='Enter list title...'
-                value={this.state.input}
-                /> 
-              </div>
-    
-              <div>
-                <input
-                className="ui primary button"
-                onClick={(e) => this.createList(e)}
-                style={{marginTop: '3px','backgroundColor': 'darkgoldenrod'}}
-                type='submit'
-                value='Create list'/> 
-              </div>
-    
-            </AddListForm>
-    
-          </ExtendDiv>
+          {this.props.lists.length === 5 ? null : 
+            <ExtendDiv>
+      
+              <AddListForm>
+                <div className='ui input'>
+                  <CustomInput
+                  onChange={(e) => this.setState({ input: e.target.value })}
+                  type='text'
+                  placeholder='Enter list title...'
+                  value={this.state.input}
+                  /> 
+                </div>
+      
+                <div>
+                  <input
+                  className="ui primary button"
+                  onClick={(e) => this.createList(e)}
+                  style={{marginTop: '3px','backgroundColor': 'darkgoldenrod'}}
+                  type='submit'
+                  value='Create list'/> 
+                </div>
+      
+              </AddListForm>
+      
+            </ExtendDiv>
+          }
         </Board>
     )
   }

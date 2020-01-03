@@ -4,7 +4,7 @@ const Board = styled.div`
   flex-direction: row;
   display: flex;
   min-height: 740px;
-  background-color: indianred;
+  background-color: lightseagreen;
 `;
 
 const AddListForm = styled.form`

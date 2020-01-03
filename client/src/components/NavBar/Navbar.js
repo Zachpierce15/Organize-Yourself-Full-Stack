@@ -10,7 +10,7 @@ const NavBar = (props) => {
 
         <SearchDiv>
           <WelcomeH2>Hello {props.user}</WelcomeH2>
-          <Title>Schedule Yourself</Title>
+          <Title>Organize Yourself</Title>
         </SearchDiv>
 
         <AddButtonDiv>

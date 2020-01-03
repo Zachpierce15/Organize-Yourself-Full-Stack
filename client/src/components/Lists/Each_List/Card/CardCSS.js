@@ -7,7 +7,8 @@ const EachCard = styled.div`
   font-size: inherit;
   margin: 4px 8px 8px;
   min-height: 23px;
-  padding: 4px 0px 4px 8px;
+  padding: 7px;
+  font-size: larger;
 `;
 
 export {

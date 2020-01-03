@@ -42,38 +42,6 @@ class EachList extends React.Component {
               </div>
             )}
           </Droppable>
-          {/* <Droppable droppableId={"23"}>
-            {(provided, snapshot) => {
-              console.log('snapshot: ', snapshot);
-              return (
-                <div ref={provided.innerRef} {...provided.droppableProps} style={{ backgroundColor: snapshot.isDraggingOver ? 'blue' : 'grey' }}>
-                  <p>This is the column</p>
-                  {provided.placeholder}
-                  <Draggable draggableId={"47"} index={0} isDragDisabled={false}>
-       {(innerProvided) => {
-         return (
-          <div {...innerProvided.draggabldeProps}
-              {...innerProvided.dragHandleProps}
-              ref={innerProvided.innerRef}>
-              <p>Something</p>
-        </div>
-         )
-       }
-      }
-    </Draggable>
-    <Draggable draggableId={"48"} index={1} isDragDisabled={false}>
-       {(innerProvided) => (
-         <div {...innerProvided.draggableProps}
-              {...innerProvided.dragHandleProps}
-              ref={innerProvided.innerRef}>
-              <p>Something</p>
-        </div>
-      )}
-    </Draggable>
-                </div>
-              )
-            }}
-          </Droppable> */}
 
           <AddCardDiv>
 
