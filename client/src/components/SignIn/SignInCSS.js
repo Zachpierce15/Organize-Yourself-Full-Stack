@@ -7,6 +7,8 @@ const SignInDiv = styled.div`
   align-items: center;
   text-align: center;
   min-height: 80vh;
+  background: indianred;
+  height: -webkit-fill-available;
 `
 
 export{

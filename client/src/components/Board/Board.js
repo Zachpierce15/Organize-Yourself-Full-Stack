@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import EachList from '../Lists/Each_List/EachList';
 import { addList } from '../../actions';
-import { Board, AddListForm } from './BoardCSS';
+import { Board, AddListForm, CustomInput, ExtendDiv } from './BoardCSS';
 
 // Generates a random id for each list
 const generateId = (min, max) => {
@@ -38,11 +38,11 @@ class Lists extends React.Component {
     
           {this.props.lists.length === 0 ? null : <EachList />}
     
-          <div>
+          <ExtendDiv>
     
             <AddListForm>
               <div className='ui input'>
-                <input
+                <CustomInput
                 onChange={(e) => this.setState({ input: e.target.value })}
                 type='text'
                 placeholder='Enter list title...'
@@ -51,12 +51,17 @@ class Lists extends React.Component {
               </div>
     
               <div>
-                <input className="ui primary button" onClick={(e) => this.createList(e)} style={{marginTop: '3px'}} type='submit' value='Create list'/> 
+                <input
+                className="ui primary button"
+                onClick={(e) => this.createList(e)}
+                style={{marginTop: '3px','backgroundColor': 'darkgoldenrod'}}
+                type='submit'
+                value='Create list'/> 
               </div>
     
             </AddListForm>
     
-          </div>
+          </ExtendDiv>
         </Board>
     )
   }

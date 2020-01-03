@@ -52,9 +52,11 @@ class CardForm extends React.Component{
               <Form>
                 <CustomDiv className="ui input">
                   <Field
-                    type='text'
+                    component='textarea'
+                    rows='3'
+                    cols='33'
                     name='card'
-                    placeholder='Enter title for card' 
+                    placeholder='Enter title for card...' 
                   />
                   {
                     errors.card && touched.card ? (
@@ -69,6 +71,7 @@ class CardForm extends React.Component{
                 <ButtonDiv>
                   <Field
                     className='ui green button'
+                    style={ {'background-color': 'darkcyan' }}
                     name='addCard'
                     type='submit'
                     value='Add Card'

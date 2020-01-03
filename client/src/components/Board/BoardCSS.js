@@ -4,7 +4,7 @@ const Board = styled.div`
   flex-direction: row;
   display: flex;
   min-height: 740px;
-  background-color: steelblue;
+  background-color: indianred;
 `;
 
 const AddListForm = styled.form`
@@ -16,7 +16,16 @@ const AddListForm = styled.form`
   margin-left: 11px;
   margin-top: 7px;  
 `
+const CustomInput = styled.input`
+  width: 251px;
+`;
+
+const ExtendDiv = styled.div`
+  width: 272px;
+`;
 export{
   Board,
-  AddListForm
+  AddListForm,
+  CustomInput,
+  ExtendDiv
 }

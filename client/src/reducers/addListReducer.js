@@ -24,11 +24,11 @@ export default (state = [], action) => {
       case 'MOVE_CARD':
 
         const { startId, finishId, source, destination} = action.payload
-
+        // SAME COLUMN 
         if ( startId === finishId ) {
           const newOrderedList = state.map((list) => {
             if ( list.id.toString() === startId) {
-              //Create copy of Items in list (Shallow Copy)
+              //Create copy of Items in list (Shallow Copy) 
               let copyItems = [...list.items]
               // Copy Item being moved (Shallow copy)
               let itemMoved = {...copyItems[source.index]}
@@ -43,10 +43,29 @@ export default (state = [], action) => {
           });
           return newOrderedList
           // End of same column Drags
-        }
+
+        } // Different Columns 
         else {
-          console.log('Did not make the cut')
-          return state
+          let itemMoved
+          const removeItemFromColumn = state.map((list) => {
+            if ( list.id.toString() === startId ) {
+              let copiedItems = [...list.items]
+              itemMoved = {...copiedItems[source.index]}
+              copiedItems.splice(source.index,1);
+              return {...list, items: copiedItems}
+
+            }
+            return list
+          });
+          const updatedState = removeItemFromColumn.map((list) => {
+            if (list.id.toString() === finishId) {
+              let otherCopy = [...list.items]
+              otherCopy.splice(destination.index, 0, itemMoved);
+              return { ...list, items: otherCopy}
+            }
+            return list
+          })
+          return updatedState
         } 
 
       default: 

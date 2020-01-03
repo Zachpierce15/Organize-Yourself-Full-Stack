@@ -8,7 +8,7 @@ const List = styled.div`
   margin-left: 8px;
   position: relative;
   vertical-align: top;
-  width: 192px;
+  width: 272px;
   white-space: nowrap;
 `;
 
@@ -29,7 +29,6 @@ const ListContent = styled.div`
   flex-direction: column;
   position: relative;
   white-space: normal;
-  z-index: 1;
 `;
 
 const AddCardDiv = styled.div`

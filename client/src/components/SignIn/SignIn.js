@@ -37,7 +37,7 @@ class SignIn extends React.Component {
         <h1>Schedule Yourself</h1>
         <form onSubmit={this.props.handleSubmit(this.onSubmit)} className="ui form error">
           <Field name="name" component={this.renderInput} label="Enter Name: "/>
-          <button className="ui button primary"> Submit </button>
+          <button className="ui button primary" style={{'backgroundColor': 'darkcyan'}}> Submit </button>
         </form>
       </SignInDiv>
 

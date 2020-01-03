@@ -16,7 +16,7 @@ const SearchDiv = styled.div`
 const HeaderNav = styled.nav`
   display: flex;
   flex-direction: row;
-  background-color: skyblue;
+  background-color: gray;
   padding: 8px 4px 4px 8px;
 `;
 
