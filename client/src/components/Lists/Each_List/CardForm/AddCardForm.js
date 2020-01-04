@@ -2,7 +2,7 @@ import React from 'react';
 import * as Yup from 'yup';
 import { Formik, Form, Field } from 'formik';
 import { connect } from 'react-redux';
-import { AddCardToList } from '../../../../actions';
+import { AddCardToList } from '../../../../Redux/actions';
 import { CustomDiv, ErrorMessage, FormatForm, ButtonDiv, CancelButton } from './AddCardCSS';
 
 
@@ -35,7 +35,7 @@ class CardForm extends React.Component{
     const SignupSchema = Yup.object().shape({
       card: Yup.string()
         .min(1,'Must have a minimum of 1 character')
-        .max(50, 'Max of 50 characters')
+        .max(30, 'Max of 30 characters')
         .required('Title required')
     });
     return (

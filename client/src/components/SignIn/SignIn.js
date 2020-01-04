@@ -2,7 +2,7 @@ import React from 'react';
 import { SignInDiv } from './SignInCSS'
 import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
-import { nameOfUser } from '../../actions'
+import { nameOfUser } from '../../Redux/actions'
 
 class SignIn extends React.Component {
   renderError({ error, touched }) {
@@ -31,13 +31,45 @@ class SignIn extends React.Component {
     this.props.nameOfUser(formValues)
   }
 
+
+
   render() {
+    const CustomLabel = () => {
+      let labelStyle = {
+        "fontSize": "large",
+        "display": "block",
+        "color": "rgba(0,0,0,.87)",
+        "fontWeight": "700",
+        "textTransform": "none"
+      }
+      return <label style={labelStyle}>Enter Name</label>
+    }
     return(
       <SignInDiv>
-        <h1>Schedule Yourself</h1>
-        <form onSubmit={this.props.handleSubmit(this.onSubmit)} className="ui form error">
-          <Field name="name" component={this.renderInput} label="Enter Name: "/>
-          <button className="ui button primary" style={{'backgroundColor': 'darkgoldenrod'}}> Submit </button>
+        <h1
+          style={{'fontSize': '-webkit-xxx-large'}}
+        >
+          Organize Yourself
+        </h1>
+        
+        <form
+          onSubmit={this.props.handleSubmit(this.onSubmit)}
+          className="ui form error"
+          >
+          {CustomLabel()}
+
+          <Field
+            name="name"
+            component={this.renderInput}
+            placeholder="Enter Name..."
+            />
+          <button
+            className="ui button primary"
+            style={{'backgroundColor': 'darkgoldenrod'}}
+          > 
+          Submit 
+          </button>
+
         </form>
       </SignInDiv>
 

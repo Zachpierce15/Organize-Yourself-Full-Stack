@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import SignIn from './SignIn/SignIn';
 import MainPage from './MainPage/MainPage';
 import { DragDropContext } from 'react-beautiful-dnd';
-import { MoveCard } from '../actions/index';
+import { MoveCard } from '../Redux/actions/index';
 
 
 class App extends React.Component {

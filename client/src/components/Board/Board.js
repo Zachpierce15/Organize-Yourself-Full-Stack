@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import EachList from '../Lists/Each_List/EachList';
-import { addList } from '../../actions';
+import { addList } from '../../Redux/actions';
 import { Board, AddListForm, CustomInput, ExtendDiv } from './BoardCSS';
 
 // Generates a random id for each list
