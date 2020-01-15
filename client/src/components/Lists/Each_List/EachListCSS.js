@@ -20,6 +20,7 @@ const TitleOfList = styled.div`
   min-height: 20px;
   padding: 10px 8px;
   position: relative;
+  overflow-wrap: break-word;
 `
 const ListContent = styled.div`
   background-color: #ebecf0;

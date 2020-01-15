@@ -21,14 +21,18 @@ class Lists extends React.Component {
   createList(e) {
     const { input } = this.state
     e.preventDefault()
-    // Create the list 
-    const newList = {
-      id: generateId(0,100000),
-      title: input,
-      items: []
+    if(input.length > 0) {
+   // Create the list 
+      const newList = {
+        id: generateId(0,100000),
+        title: input,
+        items: []
+      }
+      this.props.addList(newList)
+      this.setState({ input: '' })
     }
-    this.props.addList(newList)
-    this.setState({ input: '' })
+    return
+
   }
 
   render() {
@@ -45,6 +49,8 @@ class Lists extends React.Component {
                   <CustomInput
                   onChange={(e) => this.setState({ input: e.target.value })}
                   type='text'
+                  maxLength="30"
+                  minLength="3"
                   placeholder='Enter list title...'
                   value={this.state.input}
                   /> 
@@ -56,7 +62,8 @@ class Lists extends React.Component {
                   onClick={(e) => this.createList(e)}
                   style={{marginTop: '3px','backgroundColor': 'darkgoldenrod'}}
                   type='submit'
-                  value='Create list'/> 
+                  value='Create list'
+                  /> 
                 </div>
       
               </AddListForm>

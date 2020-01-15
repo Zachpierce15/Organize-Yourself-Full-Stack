@@ -52,11 +52,16 @@ class CardForm extends React.Component{
               <Form>
                 <CustomDiv className="ui input">
                   <Field
-                    component='textarea'
-                    rows='3'
-                    cols='33'
-                    name='card'
-                    placeholder='Enter title for card...' 
+                    as="textarea"
+                    rows="3"
+                    cols="33"
+                    name="card"
+                    style={{resize: "none",
+                      outline: "none",
+                      borderRadius: ".28571429rem",
+                      border: "1px solid rgba(34,36,38,.15)"
+                      }}
+                    placeholder="Enter title for card..." 
                   />
                   {
                     errors.card && touched.card ? (
