@@ -23,7 +23,7 @@ export default (state = [], action) => {
 
       case 'MOVE_CARD':
 
-        const { startId, finishId, source, destination} = action.payload
+        const { startId, finishId, source, destination } = action.payload
         // SAME COLUMN 
         if ( startId === finishId ) {
           const newOrderedList = state.map((list) => {
