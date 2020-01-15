@@ -20,7 +20,7 @@ class SignIn extends React.Component {
     return (
       <div className={className}>
         <label>{label}</label>
-         <input { ...input } autoComplete="off"/>
+         <input { ...input } autoComplete="off" maxLength="30"/>
         {this.renderError(meta)}
       </div>
 
